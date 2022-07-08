@@ -1,0 +1,539 @@
+@charset "utf-8";
+/* CSS Document */
+* { margin: 0; padding: 0; }
+body, html {
+	background: #eee;
+	width: 100%;
+	height: 100%;
+	/*가로축으로만 넘치는 부분은 안보이게 */
+	overflow-x: hidden;
+	font-family: 'NanumSquare';
+    font-weight: 400;
+	position: relative;
+}
+li { list-style: none; }
+a { text-decoration: none; color: #666; }
+img { border: none; }
+
+/*스플래쉬 스크린 */
+#splash_screen {
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/java.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+}
+
+
+
+
+/* 슬라이딩 메뉴영역 */
+#menu_area {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #fff;
+	z-index: 9999;
+	width: 100%;
+	margin-right: -100%;
+}
+#m_title {
+	width: 100%;
+	height: 50px;
+	background: #ff0000;
+}
+#m_title li { float: left; line-height: 50px; }
+#m_title li a { color: #fff; }
+#m_title li img {
+	height: 22px;
+	vertical-align: middle;
+	margin-left:10px;
+	margin-top: -5px;
+	margin-right: 5px;
+}
+#x_btn { 
+	float: right; 
+	height: 50px;
+	line-height: 50px;
+}
+#x_btn img {
+	height: 30px;
+	padding: 0 10px;
+	vertical-align: middle;
+}
+
+
+#m_club {
+	text-align: center;
+	width: 100%;
+	padding: 20px 0;
+	background: #444;
+	color: #fff;
+}
+
+#m_club h3 {
+	font-size: 18px;
+	font-weight: 400;
+}
+#m_club h3 span { color: #b99970; }
+
+#m_club p { font-size: 12px; }
+#m_club a {
+	border: 1px solid #b99970;
+	padding: 5px 18px;
+	font-size: 12px;
+	display: inline-block;
+	color: #b99970;
+	margin-top: 15px;
+}
+
+#m_service { width: 100%; }
+#m_service h2 {
+	background: #ccc;
+	font-size: 15px;
+	padding: 5px 10px;
+	font-weight: 400;
+	color: #444;
+}
+#m_service ul { width: 100%; }
+#m_service ul li {
+	box-sizing: border-box;
+	float: left;
+	width: 50%;
+	height: 56px;
+	line-height: 56px;
+	border-bottom: 1px solid #eee;
+	font-size: 14px;
+}
+/*li의 홀수객체만 선택 */
+#m_service ul li:nth-child(2n-1) {
+	border-right: 1px solid #eee;
+}
+#m_service ul li:nth-child(19),
+#m_service ul li:last-child {
+	width: 100%; 
+	border-right: 0;
+	background: #666;
+	border-bottom-color: #999;
+}
+#m_service ul li:last-child {
+	border: none;
+}
+
+#m_service ul li:nth-child(19) a,
+#m_service ul li:last-child a {
+	color: #eee;
+}
+
+
+#m_service ul li a { 
+	display: block;
+    text-indent: 10px;
+	width: 100%;
+	color: #000;
+}
+
+#m_service ul li a span {
+	float: right;
+	padding-right: 15px;
+}
+
+
+
+
+
+
+#wrap {
+	width: 100%;
+}
+#h_top {
+	width: 100%;
+	height: 60px;
+	/* h_top의 자식들 가로로 정렬 */
+	display: flex;
+	/* 가로 좌우 끝을 기준으로 자동으로 간격을 맞춰서 정렬 */
+	justify-content: space-between;
+	background: #fff;
+	/*background-color: aqua;*/
+}
+
+/* 로고, 메뉴 아이콘 */
+#g_logo a img, #g_menu img {
+	height: 36px;
+	margin: 12px;
+	display: block;
+}
+
+/* 서치영역 */
+#search_area {
+	width: 60%;
+	height: 36px;
+	/*background: aqua;*/
+}
+#search_area form {
+	overflow: hidden;
+	box-sizing: border-box;
+	width: 100%;
+	height: 36px;
+	border: 2px solid #555555;
+	margin: 12px 0;
+	border-radius: 18px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	-ms-border-radius: 18px;
+	-o-border-radius: 18px;
+	/*
+	-webkit-( 구글, 사파리 브라우저 적용되는 접두어 )
+	-moz-( 파이어폭스 )
+	-ms-( 익스플로러 )
+	-o-( 오페라 )
+	*/
+}
+#search_area form input {
+	width: 86%;
+	height: 100%;
+	border: none;
+	float: left;
+	background-color: transparent;
+	text-indent: 18px;
+}
+/* 서치영역에 커서가 깜빡이면 */
+#search_area form input:focus { outline: none; }
+
+#search_area form button {
+	width: 14%;
+	height: 100%;
+	float: right;
+	border: none;
+	background-color: transparent;
+	background-image: url(../img/search.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 24px;
+	
+}
+
+/* 네비게이션 */
+#nav_area {
+	width: 100%;
+	height: 44px;
+	background-color: #f20000;
+	overflow: scroll;
+	/* 익스플로러에서 스크롤바 안보이게 */
+	-ms-overflow-style:none;
+}
+/* 크롬, 사파리에서 스크롤바 안보이게 */
+::-webkit-scrollbar { display: none; }
+
+nav {
+	width: 645px;
+	height: 44px;
+	/*background-color: yellowgreen;*/
+	margin-left: 6px;
+	position: relative;
+}
+nav ul {
+	width: 639px;
+	height: 44px;
+}
+nav ul li {
+	float: left;
+	height: 40px;
+	font-size: 17px;
+	/*background-color: red;*/
+}
+nav ul li a {
+	display: block;
+	height: 40px;
+	padding: 0 6px;
+	color: #fff;
+	line-height: 40px;
+	/*모바일과 테블릿에서 a링크 터치시 발생하는 하이라이트 제거*/
+	-webkit-tap-highlight-color: transparent;
+}
+.move_bar {
+	width: 27.64px;
+	height: 3px;
+	background-color: #fff;
+	position: absolute;
+	bottom: 1px;
+	left: 0;
+	border-radius: 1.5px;
+}
+
+section { width: 100%;}
+
+/* 스와이퍼 슬라이드 */
+.slideWrap {
+	width: 100%;
+	/*height: 202px;*/
+	position: relative;
+}
+
+.slideWrap .swiper-slide img {
+	display: block;
+	width: 100%;
+}
+.controls {
+	position: absolute;
+	right: 12px;
+	bottom: 5px;
+	width: 86px;
+	height: 24px;
+	/*background: #fff;*/
+	z-index: 999;
+}
+
+.controls .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 0;
+}
+
+.controls .swiper-pagination {
+	width: 56px;
+	height: 24px;
+	background: rgba(0,0,0,0.4);
+	float: left;
+	font-size: 12px;
+	line-height: 24px;
+	color: #fff;
+	border-radius: 12px;
+}
+.controls .btns {
+	width: 22px;
+	height: 22px;
+	border: 1px solid #666;
+	float: right;
+	background-image: url(../img/pause-solid.png);
+	background-position: top left;
+	background-size: 22px;
+	background-repeat: no-repeat;
+	border-radius: 100%;
+}
+
+/* 배너영역 */
+#banner_area {
+	width: 100%;
+}
+#b_title {
+	width: 100%;
+	height: 20px;
+	background-color: #555555;
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	position: relative;
+}
+#b_title:after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: -12px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-width: 6px;
+	border-style: solid;
+	border-color: #555555 transparent transparent transparent;
+}
+
+#b_content img {
+	display: block;
+	width: 100%;
+}
+
+/* 제품소개영역 */
+#product_area {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 8px;
+	background-color: #ccc;
+}
+#p_menu {
+	width: 100%;
+}
+#s_title {
+	width: 100%;
+	height: 44px;
+	background: #ff0000;
+	line-height: 50px;
+	color: #fff;
+	
+	margin: 0 auto;
+	/**/
+}
+.s_name{
+	
+	width: 100%;
+	margin-left: 20px;
+}
+#s_menu {
+	width: 100%;
+	height: 40px;
+	border-radius: 0 0 4px 4px;
+	background: #fff;
+	overflow: scroll;
+	-ms-overflow-style:none;
+}
+#s_menu ul {
+	width: 908px;
+	height: 40px;
+	/*background: yellow;*/
+}
+
+#s_menu ul li {
+	float: left;
+	/*background: red;*/
+}
+#s_menu ul li a {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 15px;
+	padding: 0 6px;
+	color: #333;
+	-webkit-tap-highlight-color: transparent;
+}
+#s_menu ul li:first-child a { padding-left: 12px; }
+#s_menu ul li:last-child a { padding-right: 12px; }
+
+/* 첫번째 제품 */
+.p_box {
+	width: 100%;
+	background-color: #fff;
+	border-radius: 4px;
+	margin-top: 8px;
+	position: relative;
+}
+.p_title {
+	display: flex;
+	align-items: center;
+	padding: 10px 10px;
+}
+.p_title img {
+	height: 24px;
+}
+.p_title span {
+	font-size: 14px;
+	text-indent: 5px;
+	font-family: 'NanumSquare';
+	font-weight: 500;
+}
+.p_img img {
+	display: block;
+	width: 100%;
+}
+.p_spec {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 6px 10px;
+	/*height: 82px;*/
+}
+.p_name {
+	font-size: 13px;
+}
+.p_price {
+	font-size: 14px;
+	color: #666;
+}
+.p_price strong { 
+	font-size: 22px; 
+	padding-right: 5px; 
+	color: #ff0000;
+}
+.p_price span { font-size: 14px;  }
+.p_price b { font-size: 22px; color: #333; }
+.p_price > span { 
+	font-size: 10px; color: #999; 
+	text-decoration: line-through;
+	padding-left: 5px;
+}
+.p_del {
+	font-size: 12px;
+	color: #999;
+}
+.circle { 
+	position: absolute;
+	bottom: 2px;
+	right: 7px;
+	/*background: yellow;*/
+}
+.circle li { 
+	float: left; 
+	width: 36px; height: 36px;
+	margin: 3px;
+	text-align: center;
+}
+.circle li form input { display: none; }
+.circle li form label {
+	position: relative;
+	display: block;
+	width: 34px;
+	height: 34px;
+	border-radius: 100%;
+	border: 1px solid #ccc;
+}
+.circle li form label svg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.circle li form label svg:first-child { 
+	color:  #999; 
+}
+.circle li form label svg:last-child { 
+	color:  #ff0000; 
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+/*라벨을 클릭하면(인풋이 체크드 되면) 형제인 라벨의 자식인 svg의 막내의 스타일변경  */
+.circle li form input:checked ~ label svg:last-child {
+	opacity: 1;
+}
+
+.circle li a p {
+	width: 34px;
+	height: 34px;
+	border-radius: 100%;
+	border: 1px solid #ccc;
+	font-size: 10px;
+	line-height: 11px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.circle li a p span {
+	 color: #ff0000;
+}
+
+/* 푸터 */
+footer {
+	width: 100%;
+	padding: 30px 0;
+	background: #333;
+	color: #666;
+	text-align: center;
+	font-size: 10px;
+}
+
+#f_menu li {
+	display: inline-block;
+	margin:0 3px;
+	padding: 5px 15px;
+	background: #666;
+	font-size: 12px;
+}
+#f_menu li a { color: #ccc; }
+
+.f_title { padding-top: 15px; font-size: 13px; color: #ccc; }
+#info_menu li { display: inline-block; padding-bottom: 15px; }
+#info_menu li a { font-size: 12px; color: #ccc; }
+
+
+
